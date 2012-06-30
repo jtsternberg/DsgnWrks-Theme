@@ -1,0 +1,87 @@
+/* Custom Login Styles */
+body {
+  background: url(images/DWbg2.jpg) #282828 fixed top center no-repeat !important;
+  font-family: Tahoma, Geneva, Verdana, Arial, Helvetica, sans-serif;
+  color: #a9a8aa;
+  font-size: 12px;
+  padding-top: 100px;
+  height: 100%;
+}
+div.login {
+  height: 100%;
+}
+.login #nav, .login #backtoblog {
+padding: 6px 16px 6px;
+}
+.login #backtoblog a {
+  text-shadow: none;
+  color: #bbb !important;
+  padding: 8px 15px;
+}
+
+.login #backtoblog a:hover {
+  color: #00aeef !important;
+}
+
+div.updated, .login .message, div.error, .login #login_error {
+  text-align: center;
+}
+
+#loginform {
+  background: #000;
+  color: #fff;
+}
+.login #nav a {
+  color: #555 !important;
+  text-shadow: none;
+}
+.login #nav a:hover {
+  color: #00aeef !important;
+  text-shadow: none;
+}
+.login h1 a {
+  background-image: url(images/nice-logo.png) !important;
+  height:80px;
+}
+#loginform {
+  -moz-box-shadow: #222 0 3px 8px;
+  -webkit-box-shadow: #222 0 3px 8px;
+  -khtml-box-shadow: #222 0 3px 8px;
+  box-shadow: #222 0 3px 8px;
+	background:transparent url(images/bgtile.png);
+  color: #ddd;
+  border: 1px solid #111;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+label {
+  color: #bbb;
+  font-size: 13px;
+}
+#user_pass, #user_login {
+	border:#000 solid 1px;
+	background:transparent url(images/bgtile.png);
+	color:#eee;
+	}
+input.button-primary,
+button.button-primary,
+a.button-primary,
+input.button-primary:active,
+button.button-primary:active,
+a.button-primary:active {
+  background: #111;
+  border-color: #444;
+  color: #bbb;
+  font-weight: bold;
+}
+input.button-primary:hover,
+button.button-primary:hover,
+a.button-primary:hover,
+a.button-primary:focus,
+a.button-primary:active {
+  background: #000;
+  border-color: #444;
+  color: #00aeef;
+}
