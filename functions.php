@@ -223,7 +223,7 @@ add_action( 'all_admin_notices', 'testing_testing_testing' );
 function testing_testing_testing() {
 	echo '<div id="message" class="updated"><p>';
 
-		echo '<pre>'. htmlentities( print_r( 'test', true ) ) .'</pre>';
+		echo '<pre>'. htmlentities( print_r( 'testing git', true ) ) .'</pre>';
 
 	echo '</p></div>';
 
