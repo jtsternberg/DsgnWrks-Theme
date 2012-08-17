@@ -20,6 +20,7 @@ function dsgnwrks_scripts_and_styles() {
 
 	// wp_enqueue_script( 'ss-legacy', get_stylesheet_directory_uri(). '/lib/webfonts/ss-legacy.js', false, '1.0', true );
 	// wp_enqueue_style( 'ss-standard', get_stylesheet_directory_uri() . '/lib/webfonts/ss-standard.css' );
+	// wp_enqueue_style( 'ss-social', get_stylesheet_directory_uri() . '/lib/webfonts/ss-social.css' );
 
 	if ( is_front_page() ) {
 		wp_enqueue_script( 'flexslider', get_stylesheet_directory_uri(). '/lib/js/jquery.flexslider.js', 'jquery', '1.0' );
@@ -116,6 +117,7 @@ function dsgnwrks_do_slider() {
 						<?php
 						echo '<h3>'. get_the_title( $post->ID ) .'</h3>';
 						echo apply_filters( 'the_content', $post->post_content );
+						echo 'Settings <i class="ss-icon">next</i>';
 						echo $linktext;
 						?>
 					</div>
