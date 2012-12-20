@@ -41,9 +41,7 @@ textarea,
 .sticky,
 .taxonomy-description,
 .wp-caption {
-  background: #666;
-  color: #fff;
-  border: 1px solid #333;
+  border-bottom: 1px solid #ddd;
 }
 input,
 label,
@@ -435,9 +433,9 @@ ul.menu li.sfHover ul {
 /* `Breadcrumb
 ----------------------------------------------------------------------------------------------------*/
 .breadcrumb {
-  font-size: 14px;
-  margin: -10px 0 30px;
-  padding: 5px 10px;
+  padding: 0 0 5px;
+  margin-left: -15px;
+  margin-bottom: 13px;
 }
 /* `Taxonomy Description
 ----------------------------------------------------------------------------------------------------*/
