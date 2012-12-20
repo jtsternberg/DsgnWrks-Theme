@@ -20,7 +20,6 @@ function dsgnwrks_scripts_and_styles() {
 
 	// wp_enqueue_script( 'ss-legacy', get_stylesheet_directory_uri(). '/lib/webfonts/ss-legacy.js', false, '1.0', true );
 	// wp_enqueue_style( 'ss-standard', get_stylesheet_directory_uri() . '/lib/webfonts/ss-standard.css' );
-	// wp_enqueue_style( 'ss-social', get_stylesheet_directory_uri() . '/lib/webfonts/ss-social.css' );
 
 	if ( is_front_page() ) {
 		wp_enqueue_script( 'flexslider', get_stylesheet_directory_uri(). '/lib/js/jquery.flexslider.js', 'jquery', '1.0' );
@@ -36,7 +35,7 @@ function dsgnwrks_scripts_and_styles() {
 add_action( 'genesis_meta', 'add_viewport_meta_tag' );
 function add_viewport_meta_tag() {
     ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
     <link rel="openid.server" href="http://www.myopenid.com/server" />
     <link rel="openid.delegate" href="http://jtsternberg.myopenid.com/" />
     <meta name="author" content="Justin Sternberg"/>
@@ -87,6 +86,7 @@ function dsgnwrks_do_slider() {
 			);
 		$posts = $slides->posts;
 		echo '<ul class="slides">';
+		$count = 0;
 		foreach ( $posts as $post ) {
 
 			$class = '';
@@ -117,7 +117,6 @@ function dsgnwrks_do_slider() {
 						<?php
 						echo '<h3>'. get_the_title( $post->ID ) .'</h3>';
 						echo apply_filters( 'the_content', $post->post_content );
-						echo 'Settings <i class="ss-icon">next</i>';
 						echo $linktext;
 						?>
 					</div>
@@ -127,13 +126,20 @@ function dsgnwrks_do_slider() {
 
 			</li>
 
-
 			<?php
+			$count++;
 		}
-		echo '</ul>';
+		echo '
+		</ul>
+		<ul class="flex-control-nav">
+		';
+		for ( $i = 0; $i < $count; $i++ ) {
+			echo '<li></li>';
+		}
+		echo '
+		</ul>
+		';
 		?>
-		<ul class="flex-control-nav"><li></li><li></li><li></li></ul>
-
 		<img class="embellish" src="<?php echo get_stylesheet_directory_uri(); ?>/images/embelishfeatured.gif" />
 	</div>
 	<?php
@@ -152,36 +158,11 @@ function dsgnwrks_footer_wrap_bottom() {
 /** Add support for 3-column footer widgets */
 add_theme_support( 'genesis-footer-widgets', 3 );
 
-add_action('wp_footer', 'powered_by_wpengine');
-function powered_by_wpengine() {
-	echo '<a class="powered_by" href="http://wpengine.com/?a_aid=4ec5c177f0064&a_bid=88380a39" target="_blank">Fast, secure WordPress hosting is provided by WP Engine.</a>';
-}
-
-// Move Admin Bar to bottom
-add_action( 'wp_head', 'dsgnwrks_stick_admin_bar_to_bottom' );
-function dsgnwrks_stick_admin_bar_to_bottom() {
-	if ( is_user_logged_in() ) {
-		echo '
-		<style type="text/css">
-		html {
-		padding-bottom: 28px !important;
-		}
-
-		body {
-		margin-top: -28px;
-		}
-
-		#wpadminbar {
-		top: auto !important;
-		bottom: 0;
-		}
-
-		#wpadminbar .quicklinks .menupop ul {
-		bottom: 28px;
-		}
-		</style>
-		';
-	}
+add_filter( 'avatar_defaults', 'dw_newgravatar' );
+function dw_newgravatar( $avatars ) {
+	$myavatar = get_stylesheet_directory_uri() . '/images/WPAdminLogo.gif';
+	$avatars[$myavatar] = 'DsgnWrks';
+	return $avatars;
 }
 
 //Custom Login Page
@@ -196,27 +177,4 @@ function dsgrnwrks_custom_logo() {
 	echo '<style type="text/css">
 		#header-logo { background-image: url('. get_stylesheet_directory_uri() .'/images/WPAdminLogo.gif) !important; }
 	</style>';
-}
-
-//hook change default gravator
-add_filter( 'avatar_defaults', 'dsgnwrks_newgravatar' );
-function dsgnwrks_newgravatar( $avatar_defaults ) {
-	$avatar_defaults[get_stylesheet_directory_uri() .'/images/WPAdminLogo.gif'] = 'DsgnWrks';
-	return $avatar_defaults;
-}
-
-add_filter( 'user_contactmethods','dsgnwrks_hide_profile_fields', 10, 1 );
-function dsgnwrks_hide_profile_fields( $contactmethods ) {
-	unset($contactmethods['aim']);
-	unset($contactmethods['jabber']);
-	unset($contactmethods['yim']);
-	return $contactmethods;
-}
-
-add_filter( 'upload_mimes', 'dsgnwrks_upload_mimes' );
-function dsgnwrks_upload_mimes( $existing_mimes=array() ) {
-
-	$existing_mimes['xml'] = 'text';
-	return $existing_mimes;
-
 }

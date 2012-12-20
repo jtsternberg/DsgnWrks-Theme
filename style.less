@@ -328,6 +328,10 @@ body {
 	position: absolute;
 	z-index: 0;
 }
+.logged-in .top-half {
+	top: 28px;
+}
+
 
 .home .top-half {
 	height: 338px;
@@ -354,6 +358,10 @@ body {
 	left: 0;
 	right: 0;
 	z-index: 99;
+}
+
+.logged-in #nav .wrap {
+	top: 28px;
 }
 
 .menu-primary {
@@ -812,7 +820,8 @@ h4 {
 	text-decoration: none;
 }
 
-#footer-widgets h4 {
+#footer-widgets h4, #footer-widgets h4 a {
+	color: @blue;
 	background: none;
 	border: none;
 	padding: 0;
@@ -1423,12 +1432,6 @@ input:hover[type="button"], input:hover[type="submit"] {
   bottom: -1px;
   left: 0px;
   z-index: 2000000000;
-}
-.logged-in .powered_by {
-  bottom: 27px;
-}
-.logged-in img[width="62"] {
-  bottom: 29px !important;
 }
 .wpengine-promo {
   text-indent: -99999px;
