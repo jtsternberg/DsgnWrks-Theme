@@ -23,7 +23,7 @@ h6,
 p,
 select,
 textarea {
-  color: #000;
+  color: #555;
   font-family: "proxima-nova-1", "proxima-nova-2", Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -49,7 +49,7 @@ input,
 label,
 select,
 textarea {
-  color: #000;
+  color: #555;
   font-family: "proxima-nova-1", "proxima-nova-2", Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -99,7 +99,7 @@ body {
   font-weight: 300;
   /*color: #eee;*/
 
-  color: #000;
+  color: #555;
   font-size: 16px;
 }
 ::-moz-selection {
@@ -147,7 +147,7 @@ body {
 }
 #title a,
 #title a:hover {
-  color: #000;
+  color: #555;
   padding: 0 0 0 20px;
   text-decoration: none;
 }
@@ -334,7 +334,7 @@ body {
   background-color: #fff;
   border: 1px solid #ddd;
   border-top: none;
-  color: #000;
+  color: #555;
   font-size: 12px;
   padding: 9px 10px 8px;
   position: relative;
@@ -344,7 +344,7 @@ body {
 .menu-primary li li a:active,
 .menu-primary li li a:hover {
   background-color: #fff;
-  color: #000;
+  color: #555;
 }
 .menu-primary li ul {
   height: auto;
@@ -399,7 +399,7 @@ ul.menu li.sfHover ul {
 .menu li.right a {
   background: none;
   border: none;
-  color: #000;
+  color: #555;
   display: inline;
   text-decoration: none;
 }
@@ -621,7 +621,7 @@ h2 a:visited {
 }
 h2 a,
 h2 a:visited {
-  color: #000;
+  color: #555;
   font-family: "museo-1", "museo-2", Georgia, "Times New Roman", Times, serif;
 }
 h2 a:hover {
@@ -648,7 +648,7 @@ h4 {
   border-bottom: 1px solid #ddd;
 }
 .widget-area h4 a {
-  color: #000;
+  color: #555;
   text-decoration: none;
 }
 #footer-widgets h4,
@@ -841,7 +841,7 @@ p.wp-caption-text {
 .sidebar li a {
   text-transform: uppercase;
   font-family: "proxima-nova-1", "proxima-nova-2", Helvetica, sans-serif;
-  color: #000;
+  color: #555;
   font-weight: 500;
 }
 .sidebar li a:hover {
@@ -932,7 +932,7 @@ input[type="submit"] {
 input:hover[type="button"],
 input:hover[type="submit"] {
   text-decoration: none;
-  border-color: #000;
+  border-color: #555;
   -moz-box-shadow: #000 0px 2px 2px;
   -webkit-box-shadow: #000 0px 2px 2px;
   -khtml-box-shadow: #000 0px 2px 2px;
