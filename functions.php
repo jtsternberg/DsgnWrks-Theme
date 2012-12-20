@@ -161,6 +161,13 @@ function dsgnwrks_footer_wrap_bottom() {
 /** Add support for 3-column footer widgets */
 add_theme_support( 'genesis-footer-widgets', 3 );
 
+add_filter( 'genesis_breadcrumb_args', 'dw_breadcrumb_args' );
+function dw_breadcrumb_args( $args ) {
+
+	$args['labels']['prefix'] = '';
+	return $args;
+}
+
 add_filter( 'avatar_defaults', 'dw_newgravatar' );
 function dw_newgravatar( $avatars ) {
 	$myavatar = get_stylesheet_directory_uri() . '/images/WPAdminLogo.gif';
