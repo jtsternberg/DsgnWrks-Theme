@@ -77,68 +77,71 @@ function dsgnwrks_do_slider() {
 	?>
 	<div id="featuredcontent">
 		<?php
-		$slides = new WP_Query(
-			array(
-				'post_type' => 'wds_featured_gallery',
-				'orderby' => 'menu_order',
-				'order' => 'ASC',
-				)
-			);
-		$posts = $slides->posts;
-		echo '<ul class="slides">';
-		$count = 0;
-		foreach ( $posts as $post ) {
+		$slides = new WP_Query( array(
+			'post_type' => 'wds_featured_gallery',
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
+		) );
+		if ( $slides && $slides->have_posts() ) {
+			echo '<ul class="slides">';
+			$count = 0;
 
-			$class = '';
-			if ( $position = get_post_meta ( $post->ID, '_wds_feat_gallery_caption_position',true ) ) {
-				if ( $position != 'none' )
-				$class = ' '. $position;
-			}
-			if ( $bg = get_post_meta ( $post->ID, '_wds_feat_gallery_caption_bg',true ) ) {
-				$class .= ' '. $bg;
-			}
-			$link = get_post_meta( $post->ID, 'link', true );
-			$linktext = get_post_meta( $post->ID, 'linktext',true );
+			while ( $slides->have_posts() ) : $slides->the_post();
 
-			$linktext = ( !empty( $linktext ) && !empty( $link ) ) ? '<h4><a class="more" href="'. $link .'">'. $linktext .'</a></h4>' : '';
-
-			?>
-
-			<li>
-				<?php
-
-				echo !empty( $link ) ? '<a href="'. $link .'">' : '';
-				echo get_the_post_thumbnail( $post->ID, 'slides' );
-				echo !empty( $link ) ? '</a>' : '';
-
-				if ( $position != 'none' ) {
-					?>
-					<div class="flex-caption<?php echo $class; ?>">
-						<?php
-						echo '<h3>'. get_the_title( $post->ID ) .'</h3>';
-						echo apply_filters( 'the_content', $post->post_content );
-						echo $linktext;
-						?>
-					</div>
-					<?php
+				$id = get_the_ID();
+				$class = '';
+				if ( $position = get_post_meta ( $id, '_wds_feat_gallery_caption_position',true ) ) {
+					if ( $position != 'none' )
+					$class = ' '. $position;
 				}
+				if ( $bg = get_post_meta ( $id, '_wds_feat_gallery_caption_bg',true ) ) {
+					$class .= ' '. $bg;
+				}
+				$link = get_post_meta( $id, 'link', true );
+				$linktext = get_post_meta( $id, 'linktext',true );
+
+				$linktext = ( !empty( $linktext ) && !empty( $link ) ) ? '<h4><a class="more" href="'. $link .'">'. $linktext .'</a></h4>' : '';
+
 				?>
 
-			</li>
+				<li>
+					<?php
 
-			<?php
-			$count++;
+					echo !empty( $link ) ? '<a href="'. $link .'">' : '';
+					echo get_the_post_thumbnail( $id, 'slides' );
+					echo !empty( $link ) ? '</a>' : '';
+
+					if ( $position != 'none' ) {
+						?>
+						<div class="flex-caption<?php echo $class; ?>">
+							<?php
+							the_title( '<h3>', '</h3>' );
+							the_content();
+							echo $linktext;
+							?>
+						</div>
+						<?php
+					}
+					?>
+
+				</li>
+
+				<?php
+				$count++;
+			endwhile;
+			// Reset Post Data
+			wp_reset_postdata();
+			echo '
+			</ul>
+			<ul class="flex-control-nav">
+			';
+			for ( $i = 0; $i < $count; $i++ ) {
+				echo '<li></li>';
+			}
+			echo '
+			</ul>
+			';
 		}
-		echo '
-		</ul>
-		<ul class="flex-control-nav">
-		';
-		for ( $i = 0; $i < $count; $i++ ) {
-			echo '<li></li>';
-		}
-		echo '
-		</ul>
-		';
 		?>
 		<img class="embellish" src="<?php echo get_stylesheet_directory_uri(); ?>/images/embelishfeatured.gif" />
 	</div>
