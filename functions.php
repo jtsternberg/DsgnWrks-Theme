@@ -9,6 +9,12 @@ set_post_thumbnail_size( 50, 50, true );
 add_image_size( 'featured-thumbnail', 152, 110, true ); // featured item thumbnail size
 add_image_size( 'slides', 940, 365, true ); // featured item thumbnail size
 
+/**
+ * Add post format support
+ */
+add_theme_support( 'post-formats', array( 'aside', 'link', 'quote', 'status', 'gallery', 'image', 'video', 'audio', 'chat' ) );
+add_theme_support( 'genesis-post-format-images' );
+
 add_action('wp_enqueue_scripts', 'dsgnwrks_scripts_and_styles');
 function dsgnwrks_scripts_and_styles() {
 	if ( is_admin() )
