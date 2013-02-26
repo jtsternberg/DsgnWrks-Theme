@@ -73,6 +73,13 @@ ul {
 ol li {
   list-style-type: decimal;
 }
+code,
+pre {
+  font-family: Monaco, Consolas, "Courier New", monospace;
+}
+code {
+  background: #f1f1f1;
+}
 /* `Hyperlinks
 ----------------------------------------------------------------------------------------------------*/
 a,
