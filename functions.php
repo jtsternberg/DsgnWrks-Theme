@@ -199,13 +199,12 @@ add_filter( 'genesis_post_info', 'dsgnwrks_show_shortlink' );
 function dsgnwrks_show_shortlink( $post_info ) {
 	$shortlink = wp_get_shortlink( get_the_ID(), 'post');
 	if ( !empty($shortlink) )
-		$post_info .= '<span class="post-comments"><input id="shortlink" type="hidden" value="' . esc_attr($shortlink) . '" /><a href="#" class="button button-small" onclick="prompt(&#39;URL:&#39;, jQuery(\'#shortlink\').val()); return false;">' . __('Get Shortlink') . '</a></span>';
+		$post_info .= '<span class="post-comments"><input id="shortlink" type="hidden" value="' . esc_attr($shortlink) . '" /><a href="#" onclick="prompt(&#39;To Copy: Cmd&#8211;C&#44; Ctrl&#8211;C&#44; or right&#8211;click&#44; &#34;Copy&#34;&#39;, jQuery(\'#shortlink\').val()); return false;">' . __('Get Shortlink') . '</a></span>';
 
 	return $post_info;
 }
 
 add_filter( 'genesis_post_edit_shortcode', 'dsgnwrks_add_space' );
 function dsgnwrks_add_space( $edit ) {
-
 	return $edit .' ';
 }
