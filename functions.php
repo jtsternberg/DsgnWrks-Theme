@@ -194,3 +194,18 @@ function dsgrnwrks_custom_logo() {
 		#header-logo { background-image: url('. get_stylesheet_directory_uri() .'/images/WPAdminLogo.gif) !important; }
 	</style>';
 }
+
+add_filter( 'genesis_post_info', 'dsgnwrks_show_shortlink' );
+function dsgnwrks_show_shortlink( $post_info ) {
+	$shortlink = wp_get_shortlink( get_the_ID(), 'post');
+	if ( !empty($shortlink) )
+		$post_info .= '<span class="post-comments"><input id="shortlink" type="hidden" value="' . esc_attr($shortlink) . '" /><a href="#" class="button button-small" onclick="prompt(&#39;URL:&#39;, jQuery(\'#shortlink\').val()); return false;">' . __('Get Shortlink') . '</a></span>';
+
+	return $post_info;
+}
+
+add_filter( 'genesis_post_edit_shortcode', 'dsgnwrks_add_space' );
+function dsgnwrks_add_space( $edit ) {
+
+	return $edit .' ';
+}
