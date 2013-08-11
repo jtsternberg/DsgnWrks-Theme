@@ -1,0 +1,37 @@
+/* Pullquote shortcode */
+.pullquote, .pullquote.alignleft {
+	padding: .5em 1.2em .5em 0;
+	float: left;
+	position: relative;
+	margin: 0;
+}
+.pullquote.alignright {
+	padding: .5em 0 .5em 1.2em;
+	float: right;
+	text-align: right;
+	margin: 0;
+}
+.pullquote.aligncenter {
+	padding: .5em 1.2em;
+	float: none;
+	margin: 0 auto;
+}
+.pullquote {
+	font-weight: 500;
+	font-size: 160%;
+	color: red !important;
+}
+.pullquote.alignleft q:before {
+	position: absolute;
+	top: .5em;
+	left: -.35em;
+}
+.pullquote.alignright q:after {
+	letter-spacing: -1em;
+}
+.pullquote .attribution {
+	font-weight: 100;
+	font-size: 65%;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
