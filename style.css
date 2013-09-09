@@ -1307,6 +1307,7 @@ div.gform_wrapper .gform_footer {
     margin: 0 auto;
   }
   .archive-page,
+  .menu-primary,
   .content-sidebar #content,
   .content-sidebar-sidebar #content,
   .footer-widgets-1,
@@ -1324,7 +1325,9 @@ div.gform_wrapper .gform_footer {
   #header .widget-area,
   #sidebar-alt,
   #title-area,
-  #wrap {
+  #wrap,
+  #inner,
+  #footer-widgets {
     width: 100%;
   }
   #wrap {
@@ -1362,9 +1365,6 @@ div.gform_wrapper .gform_footer {
   }
   .menu li.right {
     display: none;
-  }
-  #inner {
-    padding: 0;
   }
   .breadcrumb,
   .navigation,
