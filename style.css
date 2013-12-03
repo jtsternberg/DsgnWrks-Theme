@@ -1220,6 +1220,12 @@ div.gform_wrapper .gform_footer {
   margin: 0;
   padding: 0;
 }
+/* `Misc
+----------------------------------------------------------------------------------------------------*/
+pre.prettyprint {
+  font-size: 80%;
+  line-height: 1.75em;
+}
 /* `Responsive Design
 ----------------------------------------------------------------------------------------------------*/
 @media only screen and (max-width: 600px) {
