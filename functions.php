@@ -1,6 +1,6 @@
 <?php
-defined( 'CHILD_THEME_VERSION', '1.0.1' );
-defined( 'CHILD_THEME_NAME', 'DsgnWrks' );
+define( 'CHILD_THEME_VERSION', '1.0.1' );
+define( 'CHILD_THEME_NAME', 'DsgnWrks' );
 
 /** Start the engine */
 require_once( get_template_directory() . '/lib/init.php' );
