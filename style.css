@@ -1402,3 +1402,8 @@ pre.prettyprint {
     margin: 0;
   }
 }
+
+
+.entry-content div.jetpack-likes-widget-wrapper {
+  height: auto;
+}
