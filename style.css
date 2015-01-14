@@ -82,7 +82,10 @@ pre {
   font-family: Monaco, Consolas, "Courier New", monospace;
 }
 code {
-  background: #E4E4E4;
+  background-color: #E4E4E4;
+}
+.gistpen code {
+  background-color: inherit;
 }
 /* `Hyperlinks
 ----------------------------------------------------------------------------------------------------*/
@@ -107,7 +110,6 @@ body {
   font-family: "proxima-nova-1", "proxima-nova-2", Helvetica, sans-serif;
   font-weight: 300;
   /*color: #eee;*/
-
   color: #555;
   font-size: 16px;
 }
@@ -163,7 +165,6 @@ body {
 #description {
   /*font-size: 14px;
 	padding: 0 0 0 20px;*/
-
 }
 #header .widget-area {
   float: right;
@@ -612,7 +613,6 @@ h6 {
   color: #00baf2;
   font-family: "museo-1", "museo-2", Georgia, "Times New Roman", Times, serif;
   /*font-weight: 500;*/
-
   line-height: 1.25;
   margin: 0 0 10px;
 }
@@ -1402,8 +1402,6 @@ pre.prettyprint {
     margin: 0;
   }
 }
-
-
 .entry-content div.jetpack-likes-widget-wrapper {
   height: auto;
 }
