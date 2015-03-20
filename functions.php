@@ -211,3 +211,17 @@ add_filter( 'genesis_post_edit_shortcode', 'dsgnwrks_add_space' );
 function dsgnwrks_add_space( $edit ) {
 	return $edit .' ';
 }
+
+function dsgnwrks_infinite_scroll_init() {
+	add_theme_support( 'infinite-scroll', array(
+		'container' => 'content',
+		'footer' => 'footer-wrap',
+		'render' => 'genesis_do_loop',
+	) );
+}
+add_action( 'after_setup_theme', 'dsgnwrks_infinite_scroll_init' );
+
+function dsgnwrks_infinite_scroll_style() { ?>
+	<style type="text/css" media="screen">.infinite-scroll.neverending #content .navigation { display: none; }</style>
+<?php }
+add_action( 'wp_footer', 'dsgnwrks_infinite_scroll_style' );
