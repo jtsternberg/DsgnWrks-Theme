@@ -1,4 +1,5 @@
 <?php
+/** Define some constants for Genesis, etc */
 define( 'CHILD_THEME_VERSION', '1.0.1' );
 define( 'CHILD_THEME_NAME', 'DsgnWrks' );
 
